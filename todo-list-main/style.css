@@ -1,0 +1,1120 @@
+/* General Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header #streakCounter {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #f8f9fa;
+}
+
+header button {
+    background-color: #fff;
+    color: #1e90ff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+header button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Header Controls */
+.header-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Toggle Button Styles */
+.toggle-btn {
+    background-color: transparent;
+    border: 2px solid #fff; /* Add border */
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s, background-color 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1);
+    color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.1); /* Add hover background */
+    border-color: #f0f0f0; /* Change border color on hover */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Redesigned Horizontal Task Input Section */
+.task-input-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.task-input-section form {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1; /* Allow input fields to grow equally */
+    min-width: 150px; /* Ensure fields don't shrink too much */
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group input,
+.input-group select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.add-task-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-end; /* Align the button to the end */
+}
+
+.add-task-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .task-input-section form {
+        flex-direction: column; /* Stack inputs vertically on smaller screens */
+    }
+
+    .add-task-btn {
+        align-self: center; /* Center the button on smaller screens */
+    }
+}
+
+/* Filter Section */
+.task-filter-section {
+    display: flex;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-filter-section input,
+.task-filter-section select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+}
+
+/* Task List Section */
+.task-list-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-list-section h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.task-list-section ul {
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Add spacing between cards */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove default list styling */
+}
+
+/* Task Card */
+.task-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s, height 0.3s;
+}
+
+.task-card:hover {
+    transform: scale(1.02);
+    background-color: #f0f8ff;
+}
+
+.task-card.extended {
+    position: fixed; /* Float the card */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1); /* Center and enlarge */
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 90%; /* Adjust width for better visibility */
+    max-height: 90%; /* Prevent overflow */
+    overflow-y: auto; /* Add scroll if content overflows */
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.task-card.completed {
+    background-color: #d4edda;
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Collapsed Task Card */
+.task-card.collapsed .task-details,
+.task-card.collapsed .file-upload-container {
+    display: none; /* Hide content when collapsed */
+}
+
+.task-card.collapsed .task-buttons {
+    justify-content: center; /* Center buttons when collapsed */
+}
+
+/* Minimized Task Card */
+.task-card.minimized {
+    height: auto; /* Adjust height to fit title and buttons */
+    overflow: hidden; /* Hide other content */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.task-card.minimized .task-details {
+    display: none; /* Hide details when minimized */
+}
+
+.task-card.minimized .task-title {
+    display: block; /* Ensure title is visible */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* Priority-Based Card Colors */
+.task-card.priority-low {
+    background-color: #d4edda; /* Light green for low priority */
+    border-left: 5px solid #28a745; /* Green border */
+}
+
+.task-card.priority-medium {
+    background-color: #fff3cd; /* Light yellow for medium priority */
+    border-left: 5px solid #ffc107; /* Yellow border */
+}
+
+.task-card.priority-high {
+    background-color: #f8d7da; /* Light red for high priority */
+    border-left: 5px solid #dc3545; /* Red border */
+}
+
+/* Overdue Task Styles */
+.task-card.overdue {
+    border-left: 5px solid #dc3545; /* Red border for overdue tasks */
+    background-color: #f8d7da; /* Light red background */
+}
+
+/* Dark Mode Priority Colors */
+body.dark-mode .task-card.priority-low {
+    background-color: #2e3b2e; /* Dark green for low priority */
+    border-left: 5px solid #28a745;
+}
+
+body.dark-mode .task-card.priority-medium {
+    background-color: #3e3b2e; /* Dark yellow for medium priority */
+    border-left: 5px solid #ffc107;
+}
+
+body.dark-mode .task-card.priority-high {
+    background-color: #3b2e2e; /* Dark red for high priority */
+    border-left: 5px solid #dc3545;
+}
+
+.task-details {
+    flex: 1;
+}
+
+/* Task Title */
+.task-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* Task Description */
+.task-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 0;
+}
+
+.task-title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.task-date {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Task Buttons */
+.task-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.task-buttons button {
+    background-color: #007bff; /* Bright blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-buttons button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.extend-btn,
+.complete-btn,
+.delete-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.extend-btn:hover {
+    background-color: #0056b3;
+}
+
+.complete-btn {
+    background-color: #28a745;
+}
+
+.complete-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Collapse/Expand Button */
+.collapse-btn {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.collapse-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Minimize/Expand Button */
+.minimize-btn {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.minimize-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode footer {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .task-card {
+    background-color: #1e1e1e;
+    color: #fff; /* Ensure text color is white */
+    border-color: #333;
+}
+
+body.dark-mode .task-card.completed {
+    background-color: #2e2e2e;
+    color: #aaa; /* Slightly dimmed color for completed tasks */
+}
+
+body.dark-mode .task-title {
+    color: #fff; /* Ensure task title is white */
+}
+
+body.dark-mode .task-date {
+    color: #ccc; /* Slightly dimmed color for due date */
+}
+
+body.dark-mode .toggle-btn i {
+    color: #f39c12; /* Change icon color in dark mode */
+}
+
+/* Dark Mode for Extended Cards */
+body.dark-mode .task-card.extended {
+    background-color: #1e1e1e;
+    color: #fff;
+    border-color: #333;
+}
+
+/* Dark Mode Button Styles */
+body.dark-mode .task-buttons button {
+    background-color: #007bff; /* Same as normal mode */
+    color: #ffffff; /* White text */
+}
+
+body.dark-mode .task-buttons button:hover {
+    background-color: #0056b3; /* Same hover effect as normal mode */
+}
+
+body.dark-mode .minimize-btn {
+    background-color: #ffc107;
+    color: #000;
+    border: 1px solid #555; /* Add border */
+}
+
+body.dark-mode .minimize-btn:hover {
+    background-color: #e0a800;
+    border-color: #777; /* Change border color on hover */
+}
+
+body.dark-mode .complete-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: 1px solid #555; /* Add border */
+}
+
+body.dark-mode .complete-btn:hover {
+    background-color: #218838;
+    border-color: #777; /* Change border color on hover */
+}
+
+body.dark-mode .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: 1px solid #555; /* Add border */
+}
+
+body.dark-mode .delete-btn:hover {
+    background-color: #c82333;
+    border-color: #777; /* Change border color on hover */
+}
+
+body.dark-mode .file-upload-label {
+    background-color: #1e90ff;
+    color: #fff;
+    border: 1px solid #555; /* Add border */
+}
+
+body.dark-mode .file-upload-label:hover {
+    background-color: #1c7ed6;
+    border-color: #777; /* Change border color on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    margin-top: auto;
+}
+
+/* File Upload Styles */
+.file-upload-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.file-upload {
+    display: none;
+}
+
+/* File Upload Label */
+.file-upload-label {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-upload-label:hover {
+    background-color: #1c7ed6;
+}
+
+.file-preview {
+    margin-top: 10px;
+}
+
+.uploaded-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.uploaded-file-name {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Drawing Canvas */
+.canvas-container {
+    position: relative;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.drawing-canvas {
+    display: block;
+    border: 1px solid #333;
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.close-canvas-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-canvas-btn:hover {
+    background-color: #c82333;
+}
+
+/* Expanded Task Card */
+.task-card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 2px solid #007bff;
+}
+
+/* Dark Mode for Expanded Cards */
+body.dark-mode .task-card.expanded {
+    background-color: #1e1e1e;
+    color: #fff;
+    border-color: #333;
+}
+
+/* Drag-and-Drop Styles */
+.task-card.dragging {
+    opacity: 0.5;
+    transform: scale(1.05);
+    z-index: 1000;
+}
+
+/* Progress Bar Styles */
+.progress-bar-container {
+    margin-top: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #28a745;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.progress-percentage {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    text-align: right;
+    color: #333;
+}
+
+/* Subtask Section */
+.subtask-container {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtask-container h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.subtask-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subtask {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.subtask:hover {
+    background-color: #f0f8ff;
+    border-color: #007bff;
+}
+
+.subtask input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #007bff; /* Modern browsers support this for checkbox styling */
+}
+
+.subtask span {
+    flex: 1;
+    font-size: 0.9rem;
+    color: #333;
+    border: 1px solid transparent;
+    padding: 5px;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    cursor: text;
+}
+
+.subtask span:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #f0f8ff;
+}
+
+/* Add Subtask Input */
+.subtask-input {
+    width: calc(100% - 100px);
+    padding: 8px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+    transition: border-color 0.3s;
+}
+
+.subtask-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.add-subtask-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-subtask-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Completed Subtask */
+.subtask.completed {
+    background-color: #d4edda;
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+.subtask.completed span {
+    color: #6c757d;
+}
+
+/* Dark Mode for Subtasks */
+body.dark-mode .subtask-container {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .subtask {
+    background-color: #2e2e2e;
+    border-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .subtask:hover {
+    background-color: #3b3b3b;
+    border-color: #007bff;
+}
+
+body.dark-mode .subtask span {
+    color: #fff;
+}
+
+body.dark-mode .subtask.completed {
+    background-color: #2e3b2e;
+    color: #aaa;
+}
+
+body.dark-mode .subtask-input {
+    background-color: #2e2e2e;
+    color: #fff;
+    border-color: #444;
+}
+
+body.dark-mode .subtask-input:focus {
+    border-color: #007bff;
+}
+
+body.dark-mode .add-subtask-btn {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .add-subtask-btn:hover {
+    background-color: #333;
+}
+
+body.dark-mode .progress-bar {
+    background-color: #444;
+}
+
+body.dark-mode .progress-bar-fill {
+    background-color: #28a745;
+}
+
+body.dark-mode .file-upload-label {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .file-upload-label:hover {
+    background-color: #333;
+}
+
+body.dark-mode .task-buttons button {
+    border: 1px solid #555;
+}
+
+body.dark-mode .task-buttons button:hover {
+    border-color: #777;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+}
+
+/* Header */
+body.dark-mode header {
+    background-color: #1e1e1e; /* Darker header background */
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode header h1 {
+    color: #ffffff; /* Bright white for header title */
+}
+
+/* Form Title in Dark Mode */
+body.dark-mode .task-input-section h2 {
+    color: #87ceeb; /* Sky blue for form title */
+}
+
+/* Task Input Section */
+body.dark-mode .task-input-section {
+    background-color: #1e1e1e; /* Dark background for input section */
+    border: 1px solid #333; /* Subtle border for separation */
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode .task-input-section input,
+body.dark-mode .task-input-section select,
+body.dark-mode .task-input-section textarea {
+    background-color: #2e2e2e; /* Darker input background */
+    color: #e0e0e0; /* Light text */
+    border: 1px solid #444; /* Subtle border */
+}
+
+body.dark-mode .task-input-section input:focus,
+body.dark-mode .task-input-section select:focus,
+body.dark-mode .task-input-section textarea:focus {
+    border-color: #007bff; /* Highlighted border on focus */
+    outline: none;
+}
+
+/* Add Task Button */
+body.dark-mode .add-task-btn {
+    background-color: #007bff; /* Bright button background */
+    color: #ffffff; /* White text */
+}
+
+body.dark-mode .add-task-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Task List Section */
+body.dark-mode .task-list-section {
+    background-color: #1e1e1e; /* Dark background for task list */
+    border: 1px solid #333; /* Subtle border */
+}
+
+/* Task Card */
+body.dark-mode .task-card {
+    background-color: #2e2e2e; /* Darker card background */
+    border: 1px solid #444; /* Subtle border */
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode .task-card:hover {
+    background-color: #3b3b3b; /* Slightly lighter background on hover */
+}
+
+/* Task Card Title in Dark Mode */
+body.dark-mode .task-title {
+    color: #ffffff; /* Bright white for task card titles */
+}
+
+/* Task Date and Description */
+body.dark-mode .task-date,
+body.dark-mode .task-description {
+    color: #b0b0b0; /* Subtle gray for secondary text */
+}
+
+/* Task Buttons */
+.task-buttons button {
+    background-color: #007bff; /* Bright blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-buttons button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Complete Button */
+.complete-btn {
+    background-color: #28a745; /* Bright green for complete button */
+    color: #ffffff; /* White text */
+}
+
+.complete-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #dc3545; /* Bright red for delete button */
+    color: #ffffff; /* White text */
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Minimize/Expand Button */
+.minimize-btn {
+    background-color: #ffc107; /* Bright yellow for minimize/expand button */
+    color: #000000; /* Black text for contrast */
+}
+
+.minimize-btn:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: #1e1e1e; /* Dark footer background */
+    color: #e0e0e0; /* Light text */
+}
+
+/* General Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+}
+
+/* Header */
+body.dark-mode header {
+    background-color: #1e1e1e; /* Darker header background */
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode header h1 {
+    color: #ffffff; /* Bright white for header title */
+}
+
+/* Form Labels in Dark Mode */
+body.dark-mode .task-input-section label {
+    color: #ffffff; /* White color for form labels in dark mode */
+}
+
+/* Task Input Section */
+body.dark-mode .task-input-section {
+    background-color: #1e1e1e; /* Dark background for input section */
+    border: 1px solid #333; /* Subtle border for separation */
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode .task-input-section input,
+body.dark-mode .task-input-section select,
+body.dark-mode .task-input-section textarea {
+    background-color: #2e2e2e; /* Darker input background */
+    color: #e0e0e0; /* Light text */
+    border: 1px solid #444; /* Subtle border */
+}
+
+body.dark-mode .task-input-section input::placeholder,
+body.dark-mode .task-input-section textarea::placeholder {
+    color: #b0b0b0; /* Dimmed placeholder text */
+}
+
+body.dark-mode .task-input-section input:focus,
+body.dark-mode .task-input-section select:focus,
+body.dark-mode .task-input-section textarea:focus {
+    border-color: #007bff; /* Highlighted border on focus */
+    outline: none;
+}
+
+/* Add Task Button */
+body.dark-mode .add-task-btn {
+    background-color: #007bff; /* Bright button background */
+    color: #ffffff; /* White text */
+}
+
+body.dark-mode .add-task-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Task List Section */
+body.dark-mode .task-list-section {
+    background-color: #1e1e1e; /* Dark background for task list */
+    border: 1px solid #333; /* Subtle border */
+}
+
+/* Task Card */
+body.dark-mode .task-card {
+    background-color: #2e2e2e; /* Darker card background */
+    border: 1px solid #444; /* Subtle border */
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode .task-card:hover {
+    background-color: #3b3b3b; /* Slightly lighter background on hover */
+}
+
+/* Task Card Title in Dark Mode */
+body.dark-mode .task-title {
+    color: #ffffff; /* Bright white for task card titles */
+}
+
+/* Task Date and Description */
+body.dark-mode .task-date,
+body.dark-mode .task-description {
+    color: #b0b0b0; /* Subtle gray for secondary text */
+}
+
+/* Task Buttons */
+.task-buttons button {
+    background-color: #007bff; /* Bright blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-buttons button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Complete Button */
+.complete-btn {
+    background-color: #28a745; /* Bright green for complete button */
+    color: #ffffff; /* White text */
+}
+
+.complete-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #dc3545; /* Bright red for delete button */
+    color: #ffffff; /* White text */
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Minimize/Expand Button */
+.minimize-btn {
+    background-color: #ffc107; /* Bright yellow for minimize/expand button */
+    color: #000000; /* Black text for contrast */
+}
+
+.minimize-btn:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: #1e1e1e; /* Dark footer background */
+    color: #e0e0e0; /* Light text */
+}
